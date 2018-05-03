@@ -34,14 +34,21 @@ namespace QuanLyHocSinh.GUI
 
         private void btnGiaoVien_Click(object sender, EventArgs e)
         {
+            pnlNoiDung.Controls.Clear();
             ucGiaoVien frm = new ucGiaoVien();
-            //frm.TopLevel = false;
-
-            //frm.Parent = tc1.Controls[tc1.SelectedIndex];
             frm.Size = new Size(pnlNoiDung.Width, pnlNoiDung.Height);
             frm.Visible = true;
             pnlNoiDung.Controls.Add(frm);
             
+        }
+
+        private void btnHocSinh_Click(object sender, EventArgs e)
+        {
+            pnlNoiDung.Controls.Clear();
+            ucHocSinh frm = new ucHocSinh();
+            frm.Size = new Size(pnlNoiDung.Width, pnlNoiDung.Height);
+            frm.Visible = true;
+            pnlNoiDung.Controls.Add(frm);
         }
     }
 }

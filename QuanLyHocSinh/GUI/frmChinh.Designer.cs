@@ -34,7 +34,7 @@
             this.button6 = new System.Windows.Forms.Button();
             this.button3 = new System.Windows.Forms.Button();
             this.button4 = new System.Windows.Forms.Button();
-            this.button2 = new System.Windows.Forms.Button();
+            this.btnHocSinh = new System.Windows.Forms.Button();
             this.btnGiaoVien = new System.Windows.Forms.Button();
             this.pnlNoiDung = new System.Windows.Forms.Panel();
             this.panel1.SuspendLayout();
@@ -56,7 +56,7 @@
             this.groupBox1.Controls.Add(this.button6);
             this.groupBox1.Controls.Add(this.button3);
             this.groupBox1.Controls.Add(this.button4);
-            this.groupBox1.Controls.Add(this.button2);
+            this.groupBox1.Controls.Add(this.btnHocSinh);
             this.groupBox1.Controls.Add(this.btnGiaoVien);
             this.groupBox1.Dock = System.Windows.Forms.DockStyle.Left;
             this.groupBox1.Location = new System.Drawing.Point(0, 0);
@@ -102,14 +102,15 @@
             this.button4.Text = "button4";
             this.button4.UseVisualStyleBackColor = true;
             // 
-            // button2
+            // btnHocSinh
             // 
-            this.button2.Location = new System.Drawing.Point(3, 90);
-            this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(197, 43);
-            this.button2.TabIndex = 0;
-            this.button2.Text = "button1";
-            this.button2.UseVisualStyleBackColor = true;
+            this.btnHocSinh.Location = new System.Drawing.Point(3, 90);
+            this.btnHocSinh.Name = "btnHocSinh";
+            this.btnHocSinh.Size = new System.Drawing.Size(197, 43);
+            this.btnHocSinh.TabIndex = 0;
+            this.btnHocSinh.Text = "Học Sinh";
+            this.btnHocSinh.UseVisualStyleBackColor = true;
+            this.btnHocSinh.Click += new System.EventHandler(this.btnHocSinh_Click);
             // 
             // btnGiaoVien
             // 
@@ -153,7 +154,7 @@
         private System.Windows.Forms.Button button6;
         private System.Windows.Forms.Button button3;
         private System.Windows.Forms.Button button4;
-        private System.Windows.Forms.Button button2;
+        private System.Windows.Forms.Button btnHocSinh;
         private System.Windows.Forms.Button btnGiaoVien;
         private System.Windows.Forms.Panel pnlNoiDung;
     }

@@ -13,9 +13,9 @@ using QuanLyHocSinh.GUI.Sua;
 
 namespace QuanLyHocSinh.GUI.UC
 {
-    public partial class ucGiaoVien : UserControl
+    public partial class ucHocSinh : UserControl
     {
-        public ucGiaoVien()
+        public ucHocSinh()
         {
             InitializeComponent();
             loadDuLieu();
@@ -23,19 +23,18 @@ namespace QuanLyHocSinh.GUI.UC
         private void loadDuLieu()
         {
             dgvDanhSach.Rows.Clear();
-            DataTable dt = GiaoVienControl.layDanhSach();
+            DataTable dt = HocSinhControl.layDanhSach();
             for (int i = 0; i < dt.Rows.Count; ++i)
             {
                 string date = String.Format("{0:dd/MM/yyyy}", dt.Rows[i][2]);
-                double luong = double.Parse(dt.Rows[i][5].ToString()) * 1000000;
 
-                dgvDanhSach.Rows.Add(new object[] { false, dt.Rows[i][0], dt.Rows[i][1], date, dt.Rows[i][3], dt.Rows[i][4], luong.ToString("#0,000,000") });
+                dgvDanhSach.Rows.Add(new object[] { false, dt.Rows[i][0], dt.Rows[i][1], date, dt.Rows[i][3], dt.Rows[i][4] });
 
             }
         }
         private void btnNhap_Click(object sender, EventArgs e)
         {
-            frmThemGV f = new frmThemGV();
+            frmThemHS f = new frmThemHS();
             f.ShowDialog();
             loadDuLieu();
         }
@@ -46,7 +45,7 @@ namespace QuanLyHocSinh.GUI.UC
             {
                 if (Convert.ToBoolean(dgvDanhSach.Rows[i].Cells["colCheck"].Value.ToString()))
                 {
-                    ketQua += GiaoVienControl.xoaThongTin(Convert.ToInt32(dgvDanhSach.Rows[i].Cells["colMa"].Value.ToString()));
+                    ketQua += HocSinhControl.xoaThongTin(Convert.ToInt32(dgvDanhSach.Rows[i].Cells["colMa"].Value.ToString()));
                 }
             }
             if (ketQua > 0)
@@ -73,13 +72,12 @@ namespace QuanLyHocSinh.GUI.UC
                 return;
             }
             dgvDanhSach.Rows.Clear();
-            DataTable dt = GiaoVienControl.timKiem(value);
+            DataTable dt = HocSinhControl.timKiem(value);
             for (int i = 0; i < dt.Rows.Count; ++i)
             {
                 string date = String.Format("{0:dd/MM/yyyy}", dt.Rows[i][2]);
-                double luong = double.Parse(dt.Rows[i][5].ToString()) * 1000000;
 
-                dgvDanhSach.Rows.Add(new object[] { false, dt.Rows[i][0], dt.Rows[i][1], date, dt.Rows[i][3], dt.Rows[i][4], luong.ToString("#0,000,000") });
+                dgvDanhSach.Rows.Add(new object[] { false, dt.Rows[i][0], dt.Rows[i][1], date, dt.Rows[i][3], dt.Rows[i][4] });
 
             }
         }
@@ -89,13 +87,13 @@ namespace QuanLyHocSinh.GUI.UC
             int id = Convert.ToInt32(dgvDanhSach.Rows[e.RowIndex].Cells["colMa"].Value.ToString());
             if (e.ColumnIndex == dgvDanhSach.Columns["colSua"].Index)
             {
-                frmSuaGV f = new frmSuaGV(id);
+                frmSuaHS f = new frmSuaHS(id);
                 f.ShowDialog();
                 loadDuLieu();
             }
             else if (e.ColumnIndex == dgvDanhSach.Columns["colXoa"].Index)
             {
-                int ketQua = GiaoVienControl.xoaThongTin(id);
+                int ketQua = HocSinhControl.xoaThongTin(id);
                 if (ketQua <= 0)
                 {
                     MessageBox.Show("Thực hiện thất bại");
@@ -105,7 +103,7 @@ namespace QuanLyHocSinh.GUI.UC
                     loadDuLieu();
                 }
             }
-            else if(e.ColumnIndex == dgvDanhSach.Columns["colChiTiet"].Index)
+            else if (e.ColumnIndex == dgvDanhSach.Columns["colChiTiet"].Index)
             {
                 //
             }
