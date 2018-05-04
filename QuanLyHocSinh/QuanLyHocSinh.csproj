@@ -48,6 +48,12 @@
     <Compile Include="Controls\GiaoVienControl.cs" />
     <Compile Include="Controls\HocSinhControl.cs" />
     <Compile Include="ExtendModel\DataProvider.cs" />
+    <Compile Include="GUI\ChiTiet\frmDiemHS.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="GUI\ChiTiet\frmDiemHS.Designer.cs">
+      <DependentUpon>frmDiemHS.cs</DependentUpon>
+    </Compile>
     <Compile Include="GUI\frmChinh.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -90,9 +96,18 @@
     <Compile Include="GUI\UC\ucHocSinh.Designer.cs">
       <DependentUpon>ucHocSinh.cs</DependentUpon>
     </Compile>
+    <Compile Include="GUI\UC\ucMonHoc.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="GUI\UC\ucMonHoc.Designer.cs">
+      <DependentUpon>ucMonHoc.cs</DependentUpon>
+    </Compile>
     <Compile Include="Models\LopHoc.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <EmbeddedResource Include="GUI\ChiTiet\frmDiemHS.resx">
+      <DependentUpon>frmDiemHS.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="GUI\frmChinh.resx">
       <DependentUpon>frmChinh.cs</DependentUpon>
     </EmbeddedResource>
@@ -113,6 +128,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="GUI\UC\ucHocSinh.resx">
       <DependentUpon>ucHocSinh.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="GUI\UC\ucMonHoc.resx">
+      <DependentUpon>ucMonHoc.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>

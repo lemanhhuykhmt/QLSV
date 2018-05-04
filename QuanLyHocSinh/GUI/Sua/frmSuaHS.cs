@@ -44,6 +44,7 @@ namespace QuanLyHocSinh.GUI.Sua
             string ten = txtTenMoi.Text;
             string gioitinh = cbGioiTinhMoi.Text;
             string ngaysinh = dtpNgaySinhMoi.Text;
+            LopHoc lh = cbTenLop.SelectedValue as LopHoc;
             if (ckbNgaySinh.Checked == false)
             {
                 ngaysinh = "";
@@ -55,7 +56,7 @@ namespace QuanLyHocSinh.GUI.Sua
             if (kiemTra(ten, gioitinh, ngaysinh))
             {
                 int ketQua = 0;
-                ketQua = HocSinhControl.suaThongTin(id, ten, ngaysinh, gioitinh, 4);
+                ketQua = HocSinhControl.suaThongTin(id, ten, ngaysinh, gioitinh, lh.MaLH);
                 if (ketQua > 0)
                 {
                     MessageBox.Show("thay đổi thành công");
@@ -73,11 +74,6 @@ namespace QuanLyHocSinh.GUI.Sua
             this.Close();
         }
 
-        private void frmSuaGV_Load(object sender, EventArgs e)
-        {
-            ckbNgaySinh.Checked = false;
-            dtpNgaySinhMoi.Enabled = false;
-        }
 
         private void ckbNgaySinh_CheckedChanged(object sender, EventArgs e)
         {
@@ -86,14 +82,8 @@ namespace QuanLyHocSinh.GUI.Sua
 
         private void frmSuaHS_Load(object sender, EventArgs e)
         {
-            //List<LopHoc> listLop = new List<LopHoc>();
-            //DataTable dt = HocSinhControl.layDanhSachLop();
-            //for (int i = 0; i < dt.Rows.Count; ++i)
-            //{
-            //    listLop.Add(new LopHoc { MaLH = Convert.ToInt32(dt.Rows[i][0].ToString()), TenLH = dt.Rows[i][1].ToString(), GVCN = dt.Rows[i][2].ToString() });
-            //}
-            //cbTenLop.DataSource = listLop;
-            //cbTenLop.DisplayMember = "TenLH";
+            ckbNgaySinh.Checked = false;
+            dtpNgaySinhMoi.Enabled = false;
         }
     }
 }

@@ -29,6 +29,7 @@
         private void InitializeComponent()
         {
             this.groupBox2 = new System.Windows.Forms.GroupBox();
+            this.cbTenLop = new System.Windows.Forms.ComboBox();
             this.ckbNgaySinh = new System.Windows.Forms.CheckBox();
             this.dtpNgaySinhMoi = new System.Windows.Forms.DateTimePicker();
             this.cbGioiTinhMoi = new System.Windows.Forms.ComboBox();
@@ -48,7 +49,6 @@
             this.label2 = new System.Windows.Forms.Label();
             this.txtTenCu = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
-            this.cbTenLop = new System.Windows.Forms.ComboBox();
             this.groupBox2.SuspendLayout();
             this.groupBox1.SuspendLayout();
             this.SuspendLayout();
@@ -70,6 +70,17 @@
             this.groupBox2.TabIndex = 22;
             this.groupBox2.TabStop = false;
             this.groupBox2.Text = "Mới";
+            // 
+            // cbTenLop
+            // 
+            this.cbTenLop.FormattingEnabled = true;
+            this.cbTenLop.Items.AddRange(new object[] {
+            "Nam",
+            "Nữ"});
+            this.cbTenLop.Location = new System.Drawing.Point(101, 212);
+            this.cbTenLop.Name = "cbTenLop";
+            this.cbTenLop.Size = new System.Drawing.Size(227, 24);
+            this.cbTenLop.TabIndex = 17;
             // 
             // ckbNgaySinh
             // 
@@ -150,6 +161,7 @@
             this.btnDong.TabIndex = 20;
             this.btnDong.Text = "Hủy";
             this.btnDong.UseVisualStyleBackColor = true;
+            this.btnDong.Click += new System.EventHandler(this.btnDong_Click);
             // 
             // btnXacNhan
             // 
@@ -159,6 +171,7 @@
             this.btnXacNhan.TabIndex = 21;
             this.btnXacNhan.Text = "Xác Nhận";
             this.btnXacNhan.UseVisualStyleBackColor = true;
+            this.btnXacNhan.Click += new System.EventHandler(this.btnXacNhan_Click);
             // 
             // groupBox1
             // 
@@ -244,17 +257,6 @@
             this.label1.Size = new System.Drawing.Size(74, 23);
             this.label1.TabIndex = 0;
             this.label1.Text = "Tên:";
-            // 
-            // cbTenLop
-            // 
-            this.cbTenLop.FormattingEnabled = true;
-            this.cbTenLop.Items.AddRange(new object[] {
-            "Nam",
-            "Nữ"});
-            this.cbTenLop.Location = new System.Drawing.Point(101, 212);
-            this.cbTenLop.Name = "cbTenLop";
-            this.cbTenLop.Size = new System.Drawing.Size(227, 24);
-            this.cbTenLop.TabIndex = 17;
             // 
             // frmSuaHS
             // 
