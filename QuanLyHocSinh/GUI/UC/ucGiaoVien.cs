@@ -85,7 +85,7 @@ namespace QuanLyHocSinh.GUI.UC
         }
         private void dgvDanhSach_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
-            if (dgvDanhSach.Rows.Count == e.RowIndex + 1) return;
+            if (dgvDanhSach.Rows.Count == e.RowIndex + 1 || e.RowIndex == -1) return;
             int id = Convert.ToInt32(dgvDanhSach.Rows[e.RowIndex].Cells["colMa"].Value.ToString());
             if (e.ColumnIndex == dgvDanhSach.Columns["colSua"].Index)
             {

@@ -45,6 +45,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Controls\DiemControl.cs" />
     <Compile Include="Controls\GiaoVienControl.cs" />
     <Compile Include="Controls\HocSinhControl.cs" />
     <Compile Include="ExtendModel\DataProvider.cs" />
