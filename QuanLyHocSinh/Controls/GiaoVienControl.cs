@@ -8,7 +8,7 @@ using System.Threading.Tasks;
 
 namespace QuanLyHocSinh.Controls
 {
-    class GiaoVienControl
+    class GiaoVienControl//ato
     {
         private static GiaoVienControl instance;
         public GiaoVienControl Instance

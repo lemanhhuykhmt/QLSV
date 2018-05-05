@@ -11,5 +11,5 @@ namespace QuanLyHocSinh.Models
         public int MaLH { get; set; }
         public string TenLH { get; set; }
         public string GVCN { get; set; }
-    }// viết gì đó, đẩy lại
+    }// ato
 }

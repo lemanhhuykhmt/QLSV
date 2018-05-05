@@ -8,7 +8,7 @@ using System.Threading.Tasks;
 
 namespace QuanLyHocSinh.Controls
 {
-    class DiemControl
+    class DiemControl // ato
     {
         private static DiemControl instance;
         public DiemControl Instance

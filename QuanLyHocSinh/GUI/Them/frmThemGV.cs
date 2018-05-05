@@ -11,7 +11,7 @@ using System.Windows.Forms;
 
 namespace QuanLyHocSinh.GUI.Them
 {
-    public partial class frmThemGV : Form
+    public partial class frmThemGV : Form//ato
     {
         public frmThemGV()
         {
