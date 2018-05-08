@@ -21,12 +21,10 @@ namespace QuanLyHocSinh.GUI.UC
         private void loadDuLieu()
         {
             dgvDanhSach.Rows.Clear();
-            DataTable dt = HocSinhControl.layDanhSach();
+            DataTable dt = MonHocControl.layDanhSach();
             for (int i = 0; i < dt.Rows.Count; ++i)
             {
-                string date = String.Format("{0:dd/MM/yyyy}", dt.Rows[i][2]);
-
-                dgvDanhSach.Rows.Add(new object[] { false, dt.Rows[i][0], dt.Rows[i][1], date, dt.Rows[i][3], dt.Rows[i][4] });
+                dgvDanhSach.Rows.Add(new object[] { false, dt.Rows[i][0], dt.Rows[i][1], dt.Rows[i][2] });
 
             }
         }
@@ -43,7 +41,7 @@ namespace QuanLyHocSinh.GUI.UC
             {
                 if (Convert.ToBoolean(dgvDanhSach.Rows[i].Cells["colCheck"].Value.ToString()))
                 {
-                    ketQua += HocSinhControl.xoaThongTin(Convert.ToInt32(dgvDanhSach.Rows[i].Cells["colMa"].Value.ToString()));
+                    ketQua += MonHocControl.xoaThongTin(Convert.ToInt32(dgvDanhSach.Rows[i].Cells["colMa"].Value.ToString()));
                 }
             }
             if (ketQua > 0)
@@ -70,7 +68,7 @@ namespace QuanLyHocSinh.GUI.UC
                 return;
             }
             dgvDanhSach.Rows.Clear();
-            DataTable dt = HocSinhControl.timKiem(value);
+            DataTable dt = MonHocControl.timKiem(value);
             for (int i = 0; i < dt.Rows.Count; ++i)
             {
                 string date = String.Format("{0:dd/MM/yyyy}", dt.Rows[i][2]);
@@ -91,7 +89,7 @@ namespace QuanLyHocSinh.GUI.UC
             }
             else if (e.ColumnIndex == dgvDanhSach.Columns["colXoa"].Index)
             {
-                int ketQua = HocSinhControl.xoaThongTin(id);
+                int ketQua = MonHocControl.xoaThongTin(id);
                 if (ketQua <= 0)
                 {
                     MessageBox.Show("Thực hiện thất bại");

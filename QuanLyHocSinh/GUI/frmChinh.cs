@@ -50,5 +50,14 @@ namespace QuanLyHocSinh.GUI
             frm.Visible = true;
             pnlNoiDung.Controls.Add(frm);
         }
+
+        private void btnMonHoc_Click(object sender, EventArgs e)
+        {
+            pnlNoiDung.Controls.Clear();
+            ucMonHoc frm = new ucMonHoc();
+            frm.Size = new Size(pnlNoiDung.Width, pnlNoiDung.Height);
+            frm.Visible = true;
+            pnlNoiDung.Controls.Add(frm);
+        }
     }
 }
