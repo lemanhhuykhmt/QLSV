@@ -17,7 +17,7 @@ namespace QuanLyHocSinh.ExtendModel
             private set { instance = value; }
         }
         private DataProvider() { }
-        private string connectionString = "Data Source=.\\SQLEXPRESS;Initial Catalog=QLHS_GV;Integrated Security=True";
+        private string connectionString = "Data Source=.\\;Initial Catalog=QLHS_GV;Integrated Security=True";
         //Data Source=.\\SQLEXPRESS;Initial Catalog=BanBanh;Integrated Security=True
         public DataTable ExecuteQuery(string query, object[] parameters = null)
         {
