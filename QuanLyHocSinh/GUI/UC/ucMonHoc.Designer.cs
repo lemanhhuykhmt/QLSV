@@ -53,40 +53,47 @@
             this.panel1.Controls.Add(this.btnTimKiem);
             this.panel1.Dock = System.Windows.Forms.DockStyle.Top;
             this.panel1.Location = new System.Drawing.Point(0, 0);
+            this.panel1.Margin = new System.Windows.Forms.Padding(2);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(1061, 58);
+            this.panel1.Size = new System.Drawing.Size(796, 47);
             this.panel1.TabIndex = 10;
             // 
             // txtTimKiem
             // 
-            this.txtTimKiem.Location = new System.Drawing.Point(43, 23);
+            this.txtTimKiem.Location = new System.Drawing.Point(32, 19);
+            this.txtTimKiem.Margin = new System.Windows.Forms.Padding(2);
             this.txtTimKiem.Name = "txtTimKiem";
-            this.txtTimKiem.Size = new System.Drawing.Size(198, 22);
+            this.txtTimKiem.Size = new System.Drawing.Size(150, 20);
             this.txtTimKiem.TabIndex = 5;
             // 
             // btnXoa
             // 
-            this.btnXoa.Location = new System.Drawing.Point(813, 23);
+            this.btnXoa.Location = new System.Drawing.Point(610, 19);
+            this.btnXoa.Margin = new System.Windows.Forms.Padding(2);
             this.btnXoa.Name = "btnXoa";
-            this.btnXoa.Size = new System.Drawing.Size(75, 23);
+            this.btnXoa.Size = new System.Drawing.Size(56, 19);
             this.btnXoa.TabIndex = 0;
             this.btnXoa.Text = "Xóa";
             this.btnXoa.UseVisualStyleBackColor = true;
+            this.btnXoa.Click += new System.EventHandler(this.btnXoa_Click_1);
             // 
             // btnNhap
             // 
-            this.btnNhap.Location = new System.Drawing.Point(719, 22);
+            this.btnNhap.Location = new System.Drawing.Point(539, 18);
+            this.btnNhap.Margin = new System.Windows.Forms.Padding(2);
             this.btnNhap.Name = "btnNhap";
-            this.btnNhap.Size = new System.Drawing.Size(75, 23);
+            this.btnNhap.Size = new System.Drawing.Size(56, 19);
             this.btnNhap.TabIndex = 0;
             this.btnNhap.Text = "Thêm khách hàng";
             this.btnNhap.UseVisualStyleBackColor = true;
+            this.btnNhap.Click += new System.EventHandler(this.btnNhap_Click);
             // 
             // btnTimKiem
             // 
-            this.btnTimKiem.Location = new System.Drawing.Point(247, 23);
+            this.btnTimKiem.Location = new System.Drawing.Point(185, 19);
+            this.btnTimKiem.Margin = new System.Windows.Forms.Padding(2);
             this.btnTimKiem.Name = "btnTimKiem";
-            this.btnTimKiem.Size = new System.Drawing.Size(97, 23);
+            this.btnTimKiem.Size = new System.Drawing.Size(73, 19);
             this.btnTimKiem.TabIndex = 6;
             this.btnTimKiem.Text = "Tìm kiếm";
             this.btnTimKiem.UseVisualStyleBackColor = true;
@@ -104,12 +111,14 @@
             this.colSua,
             this.colXoa});
             this.dgvDanhSach.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.dgvDanhSach.Location = new System.Drawing.Point(0, 58);
+            this.dgvDanhSach.Location = new System.Drawing.Point(0, 47);
+            this.dgvDanhSach.Margin = new System.Windows.Forms.Padding(2);
             this.dgvDanhSach.Name = "dgvDanhSach";
             this.dgvDanhSach.RowHeadersVisible = false;
             this.dgvDanhSach.RowTemplate.Height = 24;
-            this.dgvDanhSach.Size = new System.Drawing.Size(1061, 580);
+            this.dgvDanhSach.Size = new System.Drawing.Size(796, 471);
             this.dgvDanhSach.TabIndex = 12;
+            this.dgvDanhSach.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvDanhSach_CellContentClick_1);
             // 
             // colCheck
             // 
@@ -162,12 +171,13 @@
             // 
             // ucMonHoc
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.Controls.Add(this.dgvDanhSach);
             this.Controls.Add(this.panel1);
+            this.Margin = new System.Windows.Forms.Padding(2);
             this.Name = "ucMonHoc";
-            this.Size = new System.Drawing.Size(1061, 638);
+            this.Size = new System.Drawing.Size(796, 518);
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvDanhSach)).EndInit();

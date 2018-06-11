@@ -85,5 +85,10 @@ namespace QuanLyHocSinh.GUI.Sua
             ckbNgaySinh.Checked = false;
             dtpNgaySinhMoi.Enabled = false;
         }
+
+        private void txtTenCu_TextChanged(object sender, EventArgs e)
+        {
+
+        }
     }
 }

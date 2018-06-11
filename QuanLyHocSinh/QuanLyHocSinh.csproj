@@ -11,6 +11,21 @@
     <TargetFrameworkVersion>v4.6.1</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
     <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
+    <PublishUrl>publish\</PublishUrl>
+    <Install>true</Install>
+    <InstallFrom>Disk</InstallFrom>
+    <UpdateEnabled>false</UpdateEnabled>
+    <UpdateMode>Foreground</UpdateMode>
+    <UpdateInterval>7</UpdateInterval>
+    <UpdateIntervalUnits>Days</UpdateIntervalUnits>
+    <UpdatePeriodically>false</UpdatePeriodically>
+    <UpdateRequired>false</UpdateRequired>
+    <MapFileExtensions>true</MapFileExtensions>
+    <ApplicationRevision>0</ApplicationRevision>
+    <ApplicationVersion>1.0.0.%2a</ApplicationVersion>
+    <IsWebBootstrapper>false</IsWebBootstrapper>
+    <UseApplicationTrust>false</UseApplicationTrust>
+    <BootstrapperEnabled>true</BootstrapperEnabled>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
     <PlatformTarget>AnyCPU</PlatformTarget>
@@ -48,6 +63,7 @@
     <Compile Include="Controls\DiemControl.cs" />
     <Compile Include="Controls\GiaoVienControl.cs" />
     <Compile Include="Controls\HocSinhControl.cs" />
+    <Compile Include="Controls\MonHocControl.cs" />
     <Compile Include="ExtendModel\DataProvider.cs" />
     <Compile Include="GUI\ChiTiet\frmDiemHS.cs">
       <SubType>Form</SubType>
@@ -73,6 +89,12 @@
     <Compile Include="GUI\Sua\frmSuaHS.Designer.cs">
       <DependentUpon>frmSuaHS.cs</DependentUpon>
     </Compile>
+    <Compile Include="GUI\Sua\frmSuaMH.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="GUI\Sua\frmSuaMH.Designer.cs">
+      <DependentUpon>frmSuaMH.cs</DependentUpon>
+    </Compile>
     <Compile Include="GUI\Them\frmThemGV.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -84,6 +106,12 @@
     </Compile>
     <Compile Include="GUI\Them\frmThemHS.Designer.cs">
       <DependentUpon>frmThemHS.cs</DependentUpon>
+    </Compile>
+    <Compile Include="GUI\Them\frmThemMH.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="GUI\Them\frmThemMH.Designer.cs">
+      <DependentUpon>frmThemMH.cs</DependentUpon>
     </Compile>
     <Compile Include="GUI\UC\ucGiaoVien.cs">
       <SubType>UserControl</SubType>
@@ -118,11 +146,17 @@
     <EmbeddedResource Include="GUI\Sua\frmSuaHS.resx">
       <DependentUpon>frmSuaHS.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="GUI\Sua\frmSuaMH.resx">
+      <DependentUpon>frmSuaMH.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="GUI\Them\frmThemGV.resx">
       <DependentUpon>frmThemGV.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="GUI\Them\frmThemHS.resx">
       <DependentUpon>frmThemHS.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="GUI\Them\frmThemMH.resx">
+      <DependentUpon>frmThemMH.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="GUI\UC\ucGiaoVien.resx">
       <DependentUpon>ucGiaoVien.cs</DependentUpon>
@@ -155,6 +189,17 @@
   <ItemGroup>
     <None Include="App.config" />
   </ItemGroup>
-  <ItemGroup />
+  <ItemGroup>
+    <BootstrapperPackage Include=".NETFramework,Version=v4.6.1">
+      <Visible>False</Visible>
+      <ProductName>Microsoft .NET Framework 4.6.1 %28x86 and x64%29</ProductName>
+      <Install>true</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include="Microsoft.Net.Framework.3.5.SP1">
+      <Visible>False</Visible>
+      <ProductName>.NET Framework 3.5 SP1</ProductName>
+      <Install>false</Install>
+    </BootstrapperPackage>
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

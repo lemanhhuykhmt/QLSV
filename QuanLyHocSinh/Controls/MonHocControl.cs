@@ -1,10 +1,11 @@
 ﻿using QuanLyHocSinh.ExtendModel;
 using System;
 using System.Collections.Generic;
-using System.Linq;
 using System.Data;
+using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+
 
 namespace QuanLyHocSinh.Controls
 {
@@ -37,10 +38,10 @@ namespace QuanLyHocSinh.Controls
             DataTable dt = DataProvider.Instance.ExecuteQuery(query, new object[] { id });
             return dt;
         }
-        public static int suaThongTin(int mamon, string tenmon, int sotiet) // sửa thông tin của khách hàng
+        public static int suaThongTin(int id, string tenmon, int sotiet) // sửa thông tin của khách hàng
         {
-            string query = "exec suahs @id , @ten , @ngaysinh , @gioitinh , @malop";
-            return DataProvider.Instance.ExecuteNonQuery(query, new object[] { mamon, tenmon, sotiet });
+            string query = "exec suamh @id , @tenmon , @sotiet ";
+            return DataProvider.Instance.ExecuteNonQuery(query, new object[] { id, tenmon, sotiet, "" });
         }
         public static int xoaThongTin(int id)
         {

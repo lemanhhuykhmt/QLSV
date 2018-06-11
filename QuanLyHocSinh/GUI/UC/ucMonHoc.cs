@@ -8,6 +8,8 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using QuanLyHocSinh.Controls;
+using QuanLyHocSinh.GUI.Them;
+using QuanLyHocSinh.GUI.Sua;
 
 namespace QuanLyHocSinh.GUI.UC
 {
@@ -28,12 +30,7 @@ namespace QuanLyHocSinh.GUI.UC
 
             }
         }
-        private void btnNhap_Click(object sender, EventArgs e)
-        {
-            //frmThemHS f = new frmThemHS();
-            //f.ShowDialog();
-            //loadDuLieu();
-        }
+       
         private void btnXoa_Click(object sender, EventArgs e)
         {
             int ketQua = 0;
@@ -71,9 +68,9 @@ namespace QuanLyHocSinh.GUI.UC
             DataTable dt = MonHocControl.timKiem(value);
             for (int i = 0; i < dt.Rows.Count; ++i)
             {
-                string date = String.Format("{0:dd/MM/yyyy}", dt.Rows[i][2]);
+                
 
-                dgvDanhSach.Rows.Add(new object[] { false, dt.Rows[i][0], dt.Rows[i][1], date, dt.Rows[i][3], dt.Rows[i][4] });
+                dgvDanhSach.Rows.Add(new object[] { false, dt.Rows[i][0], dt.Rows[i][1], dt.Rows[i][2] });
 
             }
         }
@@ -114,6 +111,60 @@ namespace QuanLyHocSinh.GUI.UC
             else if (e.KeyValue == 27)
             {
                 txtTimKiem.Text = "";
+            }
+        }
+
+        private void btnNhap_Click(object sender, EventArgs e)
+        {
+            frmThemMH f = new frmThemMH();
+            f.ShowDialog();
+            loadDuLieu();
+        }
+
+        private void btnXoa_Click_1(object sender, EventArgs e)
+        {
+            {
+                int ketQua = 0;
+                for (int i = 0; i < dgvDanhSach.Rows.Count - 1; ++i)
+                {
+                    if (Convert.ToBoolean(dgvDanhSach.Rows[i].Cells["colCheck"].Value.ToString()))
+                    {
+                        ketQua += MonHocControl.xoaThongTin(Convert.ToInt32(dgvDanhSach.Rows[i].Cells["colMa"].Value.ToString()));
+                    }
+                }
+                if (ketQua > 0)
+                {
+                    MessageBox.Show("xóa thành công " + ketQua);
+                    loadDuLieu();
+                }
+                else
+                {
+                    MessageBox.Show("xóa thất bại");
+                }
+            }
+        }
+
+        private void dgvDanhSach_CellContentClick_1(object sender, DataGridViewCellEventArgs e)
+        {
+            if (dgvDanhSach.Rows.Count == e.RowIndex + 1 || e.RowIndex == -1) return;
+            int id = Convert.ToInt32(dgvDanhSach.Rows[e.RowIndex].Cells["colMa"].Value.ToString());
+            if (e.ColumnIndex == dgvDanhSach.Columns["colSua"].Index)
+            {
+                frmSuaMH f = new frmSuaMH(id);
+                f.ShowDialog();
+                loadDuLieu();
+            }
+            else if (e.ColumnIndex == dgvDanhSach.Columns["colXoa"].Index)
+            {
+                int ketQua = MonHocControl.xoaThongTin(id);
+                if (ketQua <= 0)
+                {
+                    MessageBox.Show("Thực hiện thất bại");
+                }
+                else
+                {
+                    loadDuLieu();
+                }
             }
         }
     }
